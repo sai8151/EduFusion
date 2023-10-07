@@ -7,3 +7,6 @@ pip install python-pptx
 pip install PyPDF2
 
 pip install nltk
+
+# For first time 
+<pre><code> nltk.download("popular")
