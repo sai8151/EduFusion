@@ -23,4 +23,5 @@ pip install pydantic-core==2.9.1
 
 # For first time 
 <pre><code> nltk.download("popular")
+pip install --upgrade typing-extensions
 
