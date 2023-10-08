@@ -12,6 +12,15 @@ pip install tensorflow
 
 pip install torch
 
+pip install typing-extensions==4.6.0
+
+pip install tensorflow
+
+pip install pydantic==2.3.0
+
+pip install pydantic-core==2.9.1
+
+
 # For first time 
 <pre><code> nltk.download("popular")
 
