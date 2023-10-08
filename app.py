@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.probability import FreqDist
 from heapq import nlargest
+from transformers import pipeline
 
 # Function to extract text from a PDF file
 def extract_text_from_pdf(pdf_file_path):
@@ -64,7 +65,8 @@ def generate_summary(text_content, percentage=0.8):
     
     # Combine the selected sentences to generate the summary
     summary = ' '.join(summary_sentences)
-    
+    summarizer = pipeline("summarization")
+    summary = summarizer(text_content, max_length=150, min_length=30, do_sample=False)[0]['summary_text']
     return summary
 
 # Example usage
