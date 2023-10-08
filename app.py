@@ -34,8 +34,7 @@ def integrate_youtube_videos(text_content):
     # Placeholder for YouTube integration code
     pass
 
-
-def generate_summary(text_content, num_sentences=2):
+def generate_summary(text_content, percentage=0.8):
     # Tokenize the text into sentences and words
     sentences = sent_tokenize(text_content)
     words = word_tokenize(text_content)
@@ -57,6 +56,9 @@ def generate_summary(text_content, num_sentences=2):
                 else:
                     sentence_scores[sentence] += word_freq[word.lower()]
     
+    # Calculate the desired number of sentences for the summary based on the percentage
+    num_sentences = int(len(sentences) * percentage)
+    
     # Get the top 'num_sentences' sentences with the highest scores
     summary_sentences = nlargest(num_sentences, sentence_scores, key=sentence_scores.get)
     
@@ -66,9 +68,11 @@ def generate_summary(text_content, num_sentences=2):
     return summary
 
 # Example usage
-pdf_file_path = 'jesc108.pdf'
+pdf_file_path = 'eeen101.pdf'
 text_content = extract_text_from_pdf(pdf_file_path)
+
 if text_content:
     generate_ppt_from_text(text_content)
     integrate_youtube_videos(text_content)
-    generate_summary(text_content)
+    summary = generate_summary(text_content)
+    print(summary)

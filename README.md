@@ -3,5 +3,9 @@ innovative educational tool designed to bridge the gap between traditional textb
 
 # setup
 pip install python-pptx
+
 pip install PyPDF2
-pip install spacy
+
+pip install nltk
+
+
