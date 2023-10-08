@@ -8,4 +8,10 @@ pip install PyPDF2
 
 pip install nltk
 
+pip install tensorflow
+
+pip install torch
+
+# For first time 
+<pre><code> nltk.download("popular")
 
