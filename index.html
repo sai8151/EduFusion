@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Hide any overflowing content from the background */
+    align-items: center;
+    height: 100vh;
+}
+#background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place the background behind other content */
+}
+.container {
+    text-align: center;
+}
+.container {
+    position: relative; /* Make sure the content container is positioned relative to the body */
+    z-index: 1; /* Place the content above the background */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #ffffff; /* Set text color to be visible against the background */
+    padding: 20px;
+}
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    background-color: #242424;
+    padding: 10px;
+    border-radius: 7px;
+    transition: all 0.4s ease-in-out;
+}
+#countdown:hover{
+    background-color: #faf8f8;
+}
+
+#countdown div {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    
+}
+
+span {
+    display: block;
+    font-size: 0.8rem;
+    color: #ff0000;
+}
+    </style>
+</head>
+<body>
+    <!-- Add a container for the background -->
+    <div id="background-container">
+        <spline-viewer url="https://prod.spline.design/OcJm-EgP790APp9T/scene.splinecode"></spline-viewer>
+    </div>
+
+    <!-- Add your content container on top -->
+    <div class="container">
+        <h1>Coming Soon</h1>
+        <p>We're working on something exciting. Stay tuned!</p>
+        <div id="countdown">
+            <div>
+                <span id="days">00</span>
+                <span>Days</span>
+            </div>
+            <div>
+                <span id="hours">00</span>
+                <span>Hours</span>
+            </div>
+            <div>
+                <span id="minutes">00</span>
+                <span>Minutes</span>
+            </div>
+            <div>
+                <span id="seconds">00</span>
+                <span>Seconds</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      // Set the date we're counting down to (replace with your desired date)
+const countDownDate = new Date("Jan 1, 2024 00:00:00").getTime();
+
+const updateCountdown = () => {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days.toString().padStart(2, "0");
+    document.getElementById("hours").innerHTML = hours.toString().padStart(2, "0");
+    document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, "0");
+    document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, "0");
+};
+
+// Update the countdown every 1 second
+setInterval(updateCountdown, 1000);
+
+// Initial call to display the countdown
+updateCountdown();
+    </script>
+
+    <!-- Load Spline Viewer script after the page content -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.465/build/spline-viewer.js"></script>
+
+</body>
+</html>
