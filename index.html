@@ -1,6 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+    <!-- latest js -->
+    <script src="https://sunithaenterprises.com/rashi/rashi/rashi/assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap js -->
+    <script src="https://sunithaenterprises.com/rashi/rashi/rashi/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- feather icon js -->
+    <script src="https://sunithaenterprises.com/rashi/rashi/rashi/assets/js/icons/feather-icon/feather.min.js"></script>
+    <script src="https://sunithaenterprises.com/rashi/rashi/rashi/assets/js/icons/feather-icon/feather-icon.js"></script>
+
+    <!-- scrollbar simplebar js -->
+    <script src="https://sunithaenterprises.com/rashi/rashi/rashi/assets/js/scrollbar/simplebar.js"></script>
+    <script src="https://sunithaenterprises.com/rashi/rashi/rashi/assets/js/scrollbar/custom.js"></script>
+
+    <!-- Plugins JS -->
+    <script src="https://sunithaenterprises.com/rashi/rashi/rashi/assets/js/sidebar-menu.js"></script>
+    <script src="https://sunithaenterprises.com/rashi/rashi/rashi/assets/js/notify/bootstrap-notify.min.js"></script>
+    <script src="https://sunithaenterprises.com/rashi/rashi/rashi/assets/js/notify/index.js"></script>
+
+    <!-- Apexchar js -->
+    <script src="https://sunithaenterprises.com/rashi/rashi/rashi/assets/js/chart/apex-chart/apex-chart1.js"></script>
+    <script src="https://sunithaenterprises.com/rashi/rashi/rashi/assets/js/chart/apex-chart/moment.min.js"></script>
+    <script src="https://sunithaenterprises.com/rashi/rashi/rashi/assets/js/chart/apex-chart/apex-chart.js"></script>
+    <script src="https://sunithaenterprises.com/rashi/rashi/rashi/assets/js/chart/apex-chart/stock-prices.js"></script>
+    <script src="https://sunithaenterprises.com/rashi/rashi/rashi/assets/js/chart/apex-chart/chart-custom1.js"></script>
+
+    <!-- Google font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+
+    <!-- Linear Icon css -->
+    <link rel="stylesheet" href="https://sunithaenterprises.com/rashi/rashi/rashi/assets/css/linearicon.css">
+
+    <!-- Fontawesome css -->
+    <link rel="stylesheet" type="text/css" href="https://sunithaenterprises.com/rashi/rashi/rashi/assets/css/vendors/font-awesome.css">
+
+    <!-- Themify icon css -->
+    <link rel="stylesheet" type="text/css" href="https://sunithaenterprises.com/rashi/rashi/rashi/assets/css/vendors/themify.css">
+
+    <!--Dropzon css -->
+    <link rel="stylesheet" type="text/css" href="https://sunithaenterprises.com/rashi/rashi/rashi/assets/css/vendors/dropzone.css">
+
+    <!-- Feather icon css-->
+    <link rel="stylesheet" type="text/css" href="https://sunithaenterprises.com/rashi/rashi/rashi/assets/css/vendors/feather-icon.css">
+
+    <!-- remixicon css -->
+    <link rel="stylesheet" type="text/css" href="https://sunithaenterprises.com/rashi/rashi/rashi/assets/css/remixicon.css">
+
+    <!-- Select2 css -->
+    <link rel="stylesheet" type="text/css" href="https://sunithaenterprises.com/rashi/rashi/rashi/assets/css/select2.min.css">
+
+    <!-- Plugins css -->
+    <link rel="stylesheet" type="text/css" href="https://sunithaenterprises.com/rashi/rashi/rashi/assets/css/vendors/scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="https://sunithaenterprises.com/rashi/rashi/rashi/assets/css/vendors/animate.css">
+    <link rel="stylesheet" type="text/css" href="https://sunithaenterprises.com/rashi/rashi/rashi/assets/css/vendors/chartist.css">
+    <link rel="stylesheet" type="text/css" href="https://sunithaenterprises.com/rashi/rashi/rashi/assets/css/vendors/date-picker.css">
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="https://sunithaenterprises.com/rashi/rashi/rashi/assets/css/vendors/bootstrap.css">
+
+    <!-- Bootstrap-tag input css -->
+    <link rel="stylesheet" type="text/css" href="https://sunithaenterprises.com/rashi/rashi/rashi/assets/css/vendors/bootstrap-tagsinput.css">
+
+    <!-- App css -->
+    <link rel="stylesheet" type="text/css" href="https://sunithaenterprises.com/rashi/rashi/rashi/assets/css/style.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon</title>
@@ -129,5 +197,36 @@ updateCountdown();
     <!-- Load Spline Viewer script after the page content -->
     <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.465/build/spline-viewer.js"></script>
 
+
+
+ 
+
+    <button id="showNotification">Show Notification</button>
+
+    <script>
+        'use strict';
+
+        // Function to show the notification
+        function showNotification() {
+            var notify = $.notify('<i class="fas fa-bell"></i><strong>Loading</strong> page. Do not close this page...', {
+                type: 'theme',
+                allow_dismiss: true,
+                delay: 4000,
+                showProgressbar: true,
+                timer: 300,
+                animate: {
+                    enter: 'animated fadeInDown',
+                    exit: 'animated fadeOutUp'
+                }
+            });
+
+            setTimeout(function () {
+                notify.update('message', '<i class="fas fa-bell"></i><strong>Loading</strong> Inner Data.');
+            }, 1000);
+        }
+
+        // Attach a click event listener to the button
+        document.getElementById('showNotification').addEventListener('click', showNotification);
+    </script>
 </body>
 </html>
