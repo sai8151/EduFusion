@@ -22,6 +22,7 @@ pip install pydantic-core==2.9.1
 
 
 # For first time 
-<pre><code> nltk.download("popular")
+<pre><code>
+nltk.download("popular")
 pip install --upgrade typing-extensions
-
+python3.8 -m spacy download en_core_web_lg
