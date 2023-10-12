@@ -26,3 +26,4 @@ pip install pydantic-core==2.9.1
 nltk.download("popular")
 pip install --upgrade typing-extensions
 python3.8 -m spacy download en_core_web_lg
+pip install pdfplumber
