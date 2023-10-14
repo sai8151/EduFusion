@@ -7,7 +7,7 @@ from nltk.probability import FreqDist
 from heapq import nlargest
 from transformers import pipeline
 
-# Function to extract text from a PDF file
+# extract text from pdf
 def extract_text_from_pdf(pdf_file_path):
     text = ""
     try:
