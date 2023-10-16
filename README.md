@@ -20,6 +20,7 @@ pip install pydantic==2.3.0
 
 pip install pydantic-core==2.9.1
 
+use python3.8 if you get errors 
 
 # For first time 
 <pre><code>
