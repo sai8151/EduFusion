@@ -200,33 +200,33 @@ updateCountdown();
 
 
  
-
-    <button id="showNotification">Show Notification</button>
+<!-- 
+    <button id="showNotification">Show Notification</button> -->
 
     <script>
-        'use strict';
+        // 'use strict';
 
-        // Function to show the notification
-        function showNotification() {
-            var notify = $.notify('<i class="fas fa-bell"></i><strong>Loading</strong> page. Do not close this page...', {
-                type: 'theme',
-                allow_dismiss: true,
-                delay: 4000,
-                showProgressbar: true,
-                timer: 300,
-                animate: {
-                    enter: 'animated fadeInDown',
-                    exit: 'animated fadeOutUp'
-                }
-            });
+        // // Function to show the notification
+        // function showNotification() {
+        //     var notify = $.notify('<i class="fas fa-bell"></i><strong>Loading</strong> page. Do not close this page...', {
+        //         type: 'theme',
+        //         allow_dismiss: true,
+        //         delay: 4000,
+        //         showProgressbar: true,
+        //         timer: 300,
+        //         animate: {
+        //             enter: 'animated fadeInDown',
+        //             exit: 'animated fadeOutUp'
+        //         }
+        //     });
 
-            setTimeout(function () {
-                notify.update('message', '<i class="fas fa-bell"></i><strong>Loading</strong> Inner Data.');
-            }, 1000);
-        }
+        //     setTimeout(function () {
+        //         notify.update('message', '<i class="fas fa-bell"></i><strong>Loading</strong> Inner Data.');
+        //     }, 1000);
+        // }
 
-        // Attach a click event listener to the button
-        document.getElementById('showNotification').addEventListener('click', showNotification);
-    </script>
+    //     // Attach a click event listener to the button
+    //     document.getElementById('showNotification').addEventListener('click', showNotification);
+    // </script>
 </body>
 </html>
