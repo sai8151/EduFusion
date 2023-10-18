@@ -42,7 +42,7 @@ def create_ppt_from_chapter_summaries(pdf_path, output_pptx_path):
         title = slide.shapes.title
         #title.text = f"Chapter {len(presentation.slides)}"  # Use chapter number as the slide title
         title.text = f"Slide {i}"  # Use i as title
-        i+=i
+        i+=1
         
         chapter_text = " ".join(chapter_content)  # Combine all pages in the last chapter
         summary = summarize(chapter_text)
