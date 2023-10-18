@@ -4,6 +4,7 @@ from pptx import Presentation
 from pptx.util import Inches
 # Initialize SpaCy with TextRank
 nlp = spacy.load("en_core_web_lg")
+nlp.add_pipe("textrank")
 
 def extract_headings_and_content(pdf_path):
     headings_and_content = []
